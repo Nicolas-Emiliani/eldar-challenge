@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="logout">
+      <div class="card flex justify-content-center">
+        <p-menu [model]="items" />
+      </div>
+    </div>
+
+    <div class="title">
+      <h2>Visualization Posts</h2>
+    </div>
+
+    <div class="filter">
+      <p-inputGroup>
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          (keydown.enter)="filterPosts()"
+          pInputText
+          placeholder="Search posts..."
+        />
+        <button
+          type="button"
+          pButton
+          (click)="filterPosts()"
+          label="Search"
+        ></button>
+      </p-inputGroup>
+    </div>
+    <app-posts></app-posts>
+    <p-divider />
+    @if (filteredPosts.length === 0) {
+    <div class="no-posts">
+      <p>No posts found.</p>
+    </div>
+    } @if (data$) { @for (post of getPaginatedPosts(); track $index) {
+    <div class="cards">
+      <p-card header="{{ post.title }}">
+        <p class="m-0"></p>
+        <p>{{ post.body }}</p>
+        @if (this.accountRole()) {
+        <div class="actions">
+          <button
+            type="button"
+            pButton
+            label="Edit"
+            (click)="showDialog()"
+
+          ></button>
+          <p-toast />
+          <p-button
+            (onClick)="deletePost(post.id)"
+            label="Delete"
+            severity="warning"
+          />
+        </div>
+        }
+      </p-card>
+      <p-divider />
+    </div>
+    } }
+
+    <div class="card flex justify-content-center" #paginator>
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first"
+        [rows]="postsPerPage"
+        [totalRecords]="totalPosts"
+      />
+    </div>
+  </div>
+</div>
