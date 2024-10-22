@@ -1,0 +1,23 @@
+<div class="title">
+  <h1>Sign in</h1>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="load()">
+  <p-floatLabel>
+    <input type="text" pInputText formControlName="username" (keydown.enter)="load()" required />
+    <label for="username">Username</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <p-password formControlName="password" [feedback]="false" (keydown.enter)="load()" required />
+    <label for="password">Password</label>
+  </p-floatLabel>
+
+  <p-button
+    label="Login"
+    icon="pi pi-check"
+    [loading]="loading"
+    (onClick)="load()"
+    [disabled]="loginForm.invalid"
+  />
+</form>

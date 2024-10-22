@@ -1,0 +1,22 @@
+{
+  "user_account": [
+    {
+      "username": "user",
+      "email": "user@example.com",
+      "password": "user123",
+      "token": "8GB7kyplxTA6c8cXK1epRJHSH1OfYO5FbE8FsETAaVlDbpddwpElgGAigeoexlfD",
+      "key": "auth_token",
+      "role": "user"
+    }
+  ],
+  "admin_account": [
+    {
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "token": "3XL7QjCcw67g2K713gclfAzxD9EZZdPgOxeFJPH26evPLX70gfMCHU4PS9tYbD20",
+      "key": "auth_token",
+      "role": "admin"
+    }
+  ]
+}
