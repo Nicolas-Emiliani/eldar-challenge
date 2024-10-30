@@ -72,7 +72,7 @@ Esto iniciará un servidor de desarrollo y podrás acceder a la aplicación en h
 
 
 
-#.**Pruebas**:
+## Pruebas
 
 Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
 
@@ -90,7 +90,7 @@ Esto ejecutará las pruebas e2e y abrirá la aplicación en un navegador.
 
 
 
-#.**Despliegue**:
+## Despliegue
 
 Para crear una versión de producción de la aplicación, utiliza el siguiente comando:
 
@@ -102,7 +102,7 @@ Esto generará una carpeta dist/ con los archivos listos para ser desplegados en
 
 
 
-#.**Contribuciones**:
+## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
 
